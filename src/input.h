@@ -63,6 +63,4 @@ char getch() {  // get a character from the keyboard
     return (buf);  // return the character
 }
 
-
-
 #endif

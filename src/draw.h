@@ -1,13 +1,18 @@
 #include "objects.h"
 #include <iostream>
 #include <string>
-#include <iostream>
-#include <stdlib.h>
-#include <unistd.h>
+#include <chrono>
+#include <thread>
 
 
 #ifndef DRAW_H
 #define DRAW_H
+
+
+void sleep(float seconds) {
+    int ms = seconds * 1000;
+    std::this_thread::sleep_for(std::chrono::milliseconds(ms));
+}
 
 
 void draw(Player player, float clear_time) {
@@ -41,8 +46,8 @@ void draw(Enemy enemy, float clear_time) {
 void draw(const std::string content, float clear_time) {
     std::cout << content << std::flush;
     sleep(clear_time);
+    std::cout << "\033[2J\033[1;1H";
 }
-
 
 
 #endif
