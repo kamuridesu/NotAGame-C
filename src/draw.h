@@ -26,7 +26,7 @@ void draw(Player player, float clear_time) {
     content += player.sprite;
     std::cout << content << std::flush;
     sleep(clear_time);
-    std::cout << "\033[2J\033[1;1H";
+    system("clear");
 }
 
 void draw(Enemy enemy, float clear_time) {
@@ -40,13 +40,13 @@ void draw(Enemy enemy, float clear_time) {
     content += enemy.sprite;
     std::cout << content << std::flush;
     sleep(clear_time);
-    std::cout << "\033[2J\033[1;1H";
+    system("clear");
 }
 
 void draw(const std::string content, float clear_time) {
     std::cout << content << std::flush;
     sleep(clear_time);
-    std::cout << "\033[2J\033[1;1H";
+    system("clear");
 }
 
 
